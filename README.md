@@ -2,7 +2,8 @@
 Keeper for my notes
 
 ##  Strings:
-remember &str vs Strings 
+
+###remember &str vs Strings 
 
 I have a C++ background and I found it very useful to think about String and &str in C++ terms:
 https://stackoverflow.com/questions/24158114/what-are-the-differences-between-rusts-string-and-str
@@ -21,3 +22,8 @@ The following code lets you use the literal itself without copy (read only thoug
 ```
 let a: &str = "hello rust";
 ```
+
+### Strings vs Chars
+
+``` " ``` vs ``` ' ```
+

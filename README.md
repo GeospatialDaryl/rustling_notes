@@ -1,9 +1,84 @@
 # rustling_notes
 Keeper for my notes
 
+##  Arrays:
+
+###  Declaring
+use `let var : [` type `;` number declared (eg. 100) `]`
+
+###  Slicing
+```
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    let nice_slice = &a[1 .. 4];
+
+    assert_eq!([2, 3, 4], nice_slice)
+}
+[1]+  Done                    clear
+```
+### tuple destruct (aka py tuple unpacking)
+```
+fn main() {
+    let cat = ("Furry McFurson", 3.5);
+    let (name, age) = cat;
+
+    println!("{} is {} years old.", name, age);
+}
+[1]+  Done                    clear
+```
+or you can grab them by var name & index ``` cat.1 ```
+
+##  Functions
+
+index a range through a function call :  needs the type for the range
+```
+fn main() {
+    call_me(3);
+}
+
+fn call_me(num:u8) {
+    for i in 0..num {
+        println!("Ring! Call number {}", i + 1);
+    }
+}
+[1]+  Done                    clear
+```
+### Function call and return type
+
+#### Functions return only when the ```->``` is used
+
+Return is either explicit or implicit.  Implicit return is:
+ - returns last line
+ - no semicolon at the end of line
+
+ ```
+ fn main() {
+    let original_price = 51;
+    println!("Your sale price is {}", sale_price(original_price));
+}
+```
+for this function, we note the return type as i32
+```
+fn sale_price(price: i32) -> i32 {
+    if is_even(price) {
+        price - 10
+    } else {
+        price - 3
+    }
+}
+
+fn is_even(num: i32) -> bool {
+    num % 2 == 0
+}
+ ```
+For an explicit return, using the ```return``` keyword, the line is semicoloned and any code below is ignored.
+
+
+
 ##  Strings:
 
-###remember &str vs Strings 
+### remember &str vs Strings 
 
 I have a C++ background and I found it very useful to think about String and &str in C++ terms:
 https://stackoverflow.com/questions/24158114/what-are-the-differences-between-rusts-string-and-str

@@ -102,3 +102,19 @@ let a: &str = "hello rust";
 
 ``` " ``` vs ``` ' ```
 
+### ```to_string``` vs ```into_string```
+
+
+Read this:
+
+https://stackoverflow.com/questions/25316115/difference-between-tostring-and-intostring#comment71524171_25317888
+
+
+to_string:
+ - takes reference ```&str```
+ - returns a new String  
+ - allocates memory for that new String
+ 
+into_string:
+  - takes String
+  - moves it to new location in stack

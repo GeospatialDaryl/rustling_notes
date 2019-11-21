@@ -147,6 +147,37 @@ fn main() {
 
 ##  Enums
 
-####  Two parts: declare and use
+####  basic form: including type 
+```
+enum Message {
+    Move { x: u8, y: u8 },
+    Echo(String),
+    ChangeColor(i16, i16, i16),
+    Quit,
+}
+```
+This defines the Message enum and specifies the types for the slot.
 
+####  ```impl``` Implementations are methods for the enums
+```
+impl Message {
+    fn call(&self) {
+        println!("{:?}", &self);
+    }
+}
+```
+This paradigm allows for queing the calls to call and dispatching them with the assigned parameters.
+```
+fn main() {
+    let messages = [
+        Message::Move{ x: 10, y: 30 },
+        Message::Echo(String::from("hello world")),
+        Message::ChangeColor(200, 255, 255),
+        Message::Quit
+    ];
 
+    for message in &messages {
+        message.call();
+    }
+}
+```

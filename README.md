@@ -145,4 +145,8 @@ fn main() {
 }
 ```
 
+##  Enums
+
+####  Two parts: declare and use
+
 

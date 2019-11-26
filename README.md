@@ -181,3 +181,24 @@ fn main() {
     }
 }
 ```
+
+```
+            Message::Move{x, y } => {
+                                            self.move_position(Point{x: x as i8, y:y as i8} )
+                                     },
+
+```
+The trick here was to make sure the types of the Point `struct` matched the method.  Also, made the point object.
+
+```
+           Message::ChangeColor(r,g,b  ) => self.change_color( (r,g,b)),
+```
+The trick here was to explicitly make the tuple on the RHS and match it to the returned values from the Message arm
+
+```
+            Message::Quit => self.quit(),
+```
+Call the method of `self` with `self` being the `struct` State.
+
+
+
